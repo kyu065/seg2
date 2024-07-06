@@ -55,7 +55,7 @@
       </div>
       <div class="form-group">
         <label for="itemPrice">Item Price</label>
-        <input type="text" class="form-control" id="itemPrice" value="$4.99" readonly>
+        <input type="text" class="form-control" id="itemPrice" value="$1.99" readonly>
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
@@ -100,11 +100,11 @@
   <script>
     function updatePrice() {
       const itemName = document.getElementById('itemName').value;
-      let price = '$4.99';
+      let price = '$1.99';
       if (itemName === 'Coin Bag') {
-        price = '$9.99';
+        price = '$4.99';
       } else if (itemName === 'Coin Chest') {
-        price = '$19.99';
+        price = '$9.99';
       }
       document.getElementById('itemPrice').value = price;
     }

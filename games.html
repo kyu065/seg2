@@ -55,6 +55,22 @@
       flex: 0 0 auto;
       width: 18rem;
       margin-right: 1rem;
+      background-color: #333;
+      border: 2px solid #FFFF00;
+      color: #00FF00;
+    }
+    .card:hover {
+      border-color: #FFD700;
+    }
+    .welcome-section {
+      text-align: center;
+      margin-top: 2rem;
+      color: #FFFF00;
+    }
+    .login-prompt {
+      text-align: center;
+      margin-top: 2rem;
+      color: #FFFF00;
     }
   </style>
 </head>
@@ -72,52 +88,105 @@
     </div>
   </nav>
 
+  <div class="container welcome-section">
+    <h2>Welcome to Palm Plaza Games!</h2>
+    <p>Check out these amazing games available to you. Log in to start playing and enjoy a fantastic gaming experience!</p>
+  </div>
+
   <div class="container mt-5" id="gameShowcase">
     <h2>Games</h2>
     <div class="scrolling-wrapper">
       <div class="card">
-        <a href="image1.html"><img class="card-img-top" src="top1.png" alt="Game Image"></a>
+        <a href="image1.html"><img class="card-img-top" src="game1.png" alt="Game Image"></a>
         <div class="card-body">
           <h5 class="card-title">Game Name 1</h5>
           <p class="card-text">Description 1</p>
         </div>
       </div>
       <div class="card">
-        <a href="image2.html"><img class="card-img-top" src="top2.png" alt="Game Image"></a>
+        <a href="image2.html"><img class="card-img-top" src="game2.png" alt="Game Image"></a>
         <div class="card-body">
           <h5 class="card-title">Game Name 2</h5>
           <p class="card-text">Description 2</p>
         </div>
       </div>
       <div class="card">
-        <a href="image3.html"><img class="card-img-top" src="top3.png" alt="Game Image"></a>
+        <a href="image3.html"><img class="card-img-top" src="game3.png" alt="Game Image"></a>
         <div class="card-body">
           <h5 class="card-title">Game Name 3</h5>
           <p class="card-text">Description 3</p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="bot1.png" alt="Game Image">
+        <a href="image4.html"><img class="card-img-top" src="game4.png" alt="Game Image"></a>
         <div class="card-body">
           <h5 class="card-title">Game Name 4</h5>
           <p class="card-text">Description 4</p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="bot2.png" alt="Game Image">
+        <a href="image5.html"><img class="card-img-top" src="game5.png" alt="Game Image"></a>
         <div class="card-body">
           <h5 class="card-title">Game Name 5</h5>
           <p class="card-text">Description 5</p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="bot3.png" alt="Game Image">
+        <a href="image6.html"><img class="card-img-top" src="game6.png" alt="Game Image"></a>
         <div class="card-body">
           <h5 class="card-title">Game Name 6</h5>
           <p class="card-text">Description 6</p>
         </div>
       </div>
+      <div class="card">
+        <a href="image7.html"><img class="card-img-top" src="game7.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 7</h5>
+          <p class="card-text">Description 7</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="image8.html"><img class="card-img-top" src="game8.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 8</h5>
+          <p class="card-text">Description 8</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="image9.html"><img class="card-img-top" src="game9.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 9</h5>
+          <p class="card-text">Description 9</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="image10.html"><img class="card-img-top" src="game10.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 10</h5>
+          <p class="card-text">Description 10</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="image11.html"><img class="card-img-top" src="game11.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 11</h5>
+          <p class="card-text">Description 11</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="image12.html"><img class="card-img-top" src="game12.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 12</h5>
+          <p class="card-text">Description 12</p>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="login-prompt">
+    <p>Log in to play the games!</p>
+    <button class="btn btn-outline-success my-2 my-sm-0" id="loginButtonPrompt" onclick="window.location.href='login.html'">Log in</button>
+    <button class="btn btn-outline-primary my-2 my-sm-0" id="signupButtonPrompt" onclick="window.location.href='signup.html'">Sign Up</button>
   </div>
 </body>
 </html>
