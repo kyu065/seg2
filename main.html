@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main - Palm Plaza Games</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('background.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: #00FF00;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .navbar {
+      background-color: #111;
+    }
+    .navbar-brand, .nav-link, .btn {
+      color: #FFFF00;
+    }
+    .container, .form-control {
+      background-color: #222;
+      color: #00FF00;
+    }
+  </style>
+</head>
+<body onload="updateNavbar()">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Palm Plaza Games" width="50" height="50"></a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="deals.html">In-Game Deals</a></li>
+        <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
+        <li class="nav-item"><a class="nav-link" href="purchase.html">In-Game Purchases</a></li>
+      </ul>
+      <span class="navbar-text" id="coinCount"></span>
+      <button class="btn btn-outline-danger my-2 my-sm-0" onclick="handleLogout()">Log out</button>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2>Welcome to Palm Plaza Games</h2>
+    <!-- Game selection UI as per the screenshot -->
+    <div class="text-center" style="margin-bottom: 50px;">
+      <img src="image_placeholder.png" alt="Main Image" class="img-fluid">
+      <button class="btn btn-primary mt-3">Play Most Popular Game</button>
+    </div>
+    <div class="row">
+      <!-- Filters Section -->
+      <div class="col-12 mb-3">
+        <h4>Available filters:</h4>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-secondary">Genre</button>
+          <button type="button" class="btn btn-secondary">Genre</button>
+          <button type="button" class="btn btn-secondary">Genre</button>
+          <button type="button" class="btn btn-secondary">Genre</button>
+          <button type="button" class="btn btn-secondary">Genre</button>
+          <button type="button" class="btn btn-secondary">Genre</button>
+          <button type="button" class="btn btn-secondary">Genre</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Game Tiles -->
+      <div class="col-3 mb-4">
+        <div class="card bg-secondary text-white">
+          <div class="card-body">
+            <h5 class="card-title">GAME</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mb-4">
+        <div class="card bg-secondary text-white">
+          <div class="card-body">
+            <h5 class="card-title">GAME</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mb-4">
+        <div class="card bg-secondary text-white">
+          <div class="card-body">
+            <h5 class="card-title">GAME</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mb-4">
+        <div class="card bg-secondary text-white">
+          <div class="card-body">
+            <h5 class="card-title">GAME</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateNavbar() {
+      const coins = localStorage.getItem('coins');
+      document.getElementById('coinCount').innerText = `Coins: ${coins}`;
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('coins');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

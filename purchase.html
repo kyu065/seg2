@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In-Game Purchases - Palm Plaza Games</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('background.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: #00FF00;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .navbar {
+      background-color: #111;
+    }
+    .navbar-brand, .nav-link, .btn {
+      color: #FFFF00;
+    }
+    .container, .form-control {
+      background-color: #222;
+      color: #00FF00;
+    }
+    #itemPrice {
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Palm Plaza Games" width="50" height="50"></a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="deals.html">In-Game Deals</a></li>
+        <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
+        <li class="nav-item"><a class="nav-link" href="purchase.html">In-Game Purchases</a></li>
+      </ul>
+      <button class="btn btn-outline-success my-2 my-sm-0" id="loginButton" onclick="window.location.href='login.html'">Log in</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0" id="signupButton" onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
+  </nav>
+
+  <div class="container mt-5" id="purchaseForm">
+    <h2>In-Game Purchases</h2>
+    <form onsubmit="handlePurchase(event)">
+      <div class="form-group">
+        <label for="itemName">Item Name</label>
+        <select class="form-control" id="itemName" onchange="updatePrice()">
+          <option value="Coins">Coins</option>
+          <option value="Coin Bag">Coin Bag</option>
+          <option value="Coin Chest">Coin Chest</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="itemPrice">Item Price</label>
+        <input type="text" class="form-control" id="itemPrice" value="$4.99" readonly>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" required>
+      </div>
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method</label>
+        <select class="form-control" id="paymentMethod" onchange="toggleCardInfo()">
+          <option value="Credit Card">Credit Card</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="PayPal">PayPal</option>
+        </select>
+      </div>
+      <div id="cardInfo">
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number" required>
+        </div>
+        <div class="form-group">
+          <label for="cardExpiry">Expiry Date</label>
+          <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY" required>
+        </div>
+        <div class="form-group">
+          <label for="cardCVC">CVC</label>
+          <input type="text" class="form-control" id="cardCVC" placeholder="CVC" required>
+        </div>
+      </div>
+      <div id="paypalInfo" style="display: none;">
+        <div class="form-group">
+          <label for="paypalEmail">PayPal Email</label>
+          <input type="email" class="form-control" id="paypalEmail" placeholder="Enter PayPal email">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Purchase</button>
+    </form>
+  </div>
+
+  <script>
+    function updatePrice() {
+      const itemName = document.getElementById('itemName').value;
+      let price = '$4.99';
+      if (itemName === 'Coin Bag') {
+        price = '$9.99';
+      } else if (itemName === 'Coin Chest') {
+        price = '$19.99';
+      }
+      document.getElementById('itemPrice').value = price;
+    }
+
+    function toggleCardInfo() {
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      const cardInfo = document.getElementById('cardInfo');
+      const paypalInfo = document.getElementById('paypalInfo');
+      if (paymentMethod === 'Credit Card' || paymentMethod === 'Debit Card') {
+        cardInfo.style.display = 'block';
+        paypalInfo.style.display = 'none';
+        document.getElementById('cardNumber').required = true;
+        document.getElementById('cardExpiry').required = true;
+        document.getElementById('cardCVC').required = true;
+        document.getElementById('paypalEmail').required = false;
+      } else if (paymentMethod === 'PayPal') {
+        cardInfo.style.display = 'none';
+        paypalInfo.style.display = 'block';
+        document.getElementById('cardNumber').required = false;
+        document.getElementById('cardExpiry').required = false;
+        document.getElementById('cardCVC').required = false;
+        document.getElementById('paypalEmail').required = true;
+      } else {
+        cardInfo.style.display = 'none';
+        paypalInfo.style.display = 'none';
+        document.getElementById('cardNumber').required = false;
+        document.getElementById('cardExpiry').required = false;
+        document.getElementById('cardCVC').required = false;
+        document.getElementById('paypalEmail').required = false;
+      }
+    }
+
+    function handlePurchase(event) {
+      event.preventDefault();
+    
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const paymentMethod = document.getElementById('paymentMethod').value;
+
+      if (paymentMethod === 'Credit Card' || paymentMethod === 'Debit Card') {
+        const cardNumber = document.getElementById('cardNumber').value;
+        const cardExpiry = document.getElementById('cardExpiry').value;
+        const cardCVC = document.getElementById('cardCVC').value;
+     
+      } else if (paymentMethod === 'PayPal') {
+        const paypalEmail = document.getElementById('paypalEmail').value;
+      }
+
+      alert('Purchase successful! An email has been sent for confirmation.');
+    }
+
+
+    toggleCardInfo();
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games - Palm Plaza Games</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('background.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: #00FF00;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .navbar {
+      background-color: #111;
+    }
+    .navbar-brand, .nav-link, .btn {
+      color: #FFFF00;
+    }
+    .jumbotron {
+      background-color: #222;
+      color: #FFFF00;
+    }
+    .btn-primary {
+      background-color: #FFFF00;
+      border: none;
+      color: black;
+    }
+    .btn-primary:hover {
+      background-color: #FFD700;
+    }
+    .container, .form-control {
+      background-color: #222;
+      color: #00FF00;
+    }
+    .form-control::placeholder {
+      color: #555;
+    }
+    .form-group label {
+      color: #00FF00;
+    }
+    .scrolling-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+    .scrolling-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .card {
+      flex: 0 0 auto;
+      width: 18rem;
+      margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Palm Plaza Games" width="50" height="50"></a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="deals.html" id="dealsLink">In-Game Deals</a></li>
+        <li class="nav-item"><a class="nav-link" href="games.html" id="gamesLink">Games</a></li>
+        <li class="nav-item"><a class="nav-link" href="purchase.html" id="purchaseLink">In-Game Purchases</a></li>
+      </ul>
+      <button class="btn btn-outline-success my-2 my-sm-0" id="loginButton" onclick="window.location.href='login.html'">Log in</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0" id="signupButton" onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
+  </nav>
+
+  <div class="container mt-5" id="gameShowcase">
+    <h2>Games</h2>
+    <div class="scrolling-wrapper">
+      <div class="card">
+        <a href="image1.html"><img class="card-img-top" src="top1.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 1</h5>
+          <p class="card-text">Description 1</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="image2.html"><img class="card-img-top" src="top2.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 2</h5>
+          <p class="card-text">Description 2</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="image3.html"><img class="card-img-top" src="top3.png" alt="Game Image"></a>
+        <div class="card-body">
+          <h5 class="card-title">Game Name 3</h5>
+          <p class="card-text">Description 3</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="bot1.png" alt="Game Image">
+        <div class="card-body">
+          <h5 class="card-title">Game Name 4</h5>
+          <p class="card-text">Description 4</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="bot2.png" alt="Game Image">
+        <div class="card-body">
+          <h5 class="card-title">Game Name 5</h5>
+          <p class="card-text">Description 5</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="bot3.png" alt="Game Image">
+        <div class="card-body">
+          <h5 class="card-title">Game Name 6</h5>
+          <p class="card-text">Description 6</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
