@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In-Game Deals - Palm Plaza Games</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('background.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: #00FF00;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .navbar {
+      background-color: #111;
+    }
+    .navbar-brand, .nav-link, .btn {
+      color: #FFFF00;
+    }
+    .container, .form-control {
+      background-color: #222;
+      color: #00FF00;
+    }
+    .card {
+      position: relative;
+      border: 10px solid transparent;
+      border-radius: 5px;
+      animation: colorChange 4s linear infinite;
+    }
+    @keyframes colorChange {
+      0% { border-color: rgb(233, 134, 54); }
+      25% { border-color: yellow; }
+      50% { border-color: rgb(112, 211, 112); }
+      75% { border-color: rgb(115, 124, 238); }
+      100% { border-color: red; }
+    }
+    .card-text, .card-title {
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Palm Plaza Games" width="50" height="50"></a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="deals.html" id="dealsLink">In-Game Deals</a></li>
+        <li class="nav-item"><a class="nav-link" href="games.html" id="gamesLink">Games</a></li>
+        <li class="nav-item"><a class="nav-link" href="purchase.html" id="purchaseLink">In-Game Purchases</a></li>
+      </ul>
+      <button class="btn btn-outline-success my-2 my-sm-0" id="loginButton" onclick="window.location.href='login.html'">Log in</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0" id="signupButton" onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
+  </nav>
+
+  <div class="container mt-5" id="inGameDeals">
+    <h2>In-Game Deals</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="coins.png" alt="Coin Image">
+          <div class="card-body">
+            <h5 class="card-title">Coins</h5>
+            <p class="card-text">$1.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="coinBag.png" alt="Coin Bag Image">
+          <div class="card-body">
+            <h5 class="card-title">Coin Bag</h5>
+            <p class="card-text">$4.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="coinChest.png" alt="Coin Chest Image">
+          <div class="card-body">
+            <h5 class="card-title">Coin Chest</h5>
+            <p class="card-text">$9.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
